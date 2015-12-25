@@ -1,0 +1,21 @@
+{
+  "name": "A-BTesting",
+  "version": "0.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Austin T O'Donoghue",
+  "license": "BSD-2-Clause",
+  "dependencies": {
+    "express": "~4.13.3",
+    "mongoose": "~3.6.13",
+    "body-parser": "~1.0.1",
+    "node-rest-client": "~1.5.1",
+    "request": "~2.67.0",
+    "express-http-proxy": "~0.6.0",
+    "async": "~1.5.0",
+    "deep-diff": "~0.3.3"
+  }
+}
