@@ -7,7 +7,7 @@
 var express = require('express');
 var mongoose   = require('mongoose');
 var bodyParser = require('body-parser');
-var serverRouter = require('./app/ws/servers/router.js');
+var serverRouter = require('./app/rs/servers/router.js');
 
 var app = express();
 app.use(bodyParser.urlencoded({ extended: true }));

@@ -2,7 +2,7 @@
  * Created by ubuntu on 12/24/15.
  * Author: Austin T O'Donoghue
  */
-var myRouter = require('../servers/router.js');
+var myRouter = require('./router.js');
 var request = require('request');
 var async = require('async');
 var diff = require('deep-diff');

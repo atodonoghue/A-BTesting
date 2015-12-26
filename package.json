@@ -16,6 +16,7 @@
     "request": "~2.67.0",
     "express-http-proxy": "~0.6.0",
     "async": "~1.5.0",
-    "deep-diff": "~0.3.3"
+    "deep-diff": "~0.3.3",
+    "soap": "~0.11.1"
   }
 }
