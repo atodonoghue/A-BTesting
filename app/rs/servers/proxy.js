@@ -6,6 +6,5 @@
 var myRouter = require('./router.js');
 var client = require('../clients/client.js');
 myRouter.router.get('/proxy', function (req, res) {
-    client.testClient();
     res.json({message: 'Request Sent'});
 });
