@@ -1,11 +1,19 @@
-<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
-                  xmlns:gs="http://spring.io/guides/gs-producing-web-service"
-                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-                  xsi:schemaLocation="http://spring.io/guides/gs-producing-web-service ">
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:voy="http://foundation.rccl.com/v1/voyage" xmlns:com="http://foundation.rccl.com/v1/commontypes">
     <soapenv:Header/>
     <soapenv:Body>
-        <gs:getCountryRequest>
-            <gs:name>Spain</gs:name>
-        </gs:getCountryRequest>
+        <voy:findVoyages>
+            <voy:searchParameters>
+                <com:brandCode>R</com:brandCode>
+                <com:shipCode>QN</com:shipCode>
+                <com:itineraryCode></com:itineraryCode>
+                <com:regionCode></com:regionCode>
+                <com:packageCode></com:packageCode>
+                <com:startDate>2015-01-01</com:startDate>
+                <com:endDate>2015-12-31</com:endDate>
+                <com:includeEndingWithinDateRange></com:includeEndingWithinDateRange>
+                <com:includeRelatedMasterAndInterportingVoyages></com:includeRelatedMasterAndInterportingVoyages>
+                <com:voyageTypes></com:voyageTypes>
+            </voy:searchParameters>
+        </voy:findVoyages>
     </soapenv:Body>
 </soapenv:Envelope>
