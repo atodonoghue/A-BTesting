@@ -27,7 +27,7 @@ myRouter.router.get('/proxy', function (req, res) {
 
             // Second external endpoint
             function(callback) {
-                var url = "http://localhost:3000/api/";
+                var url = "http://localhost:3000/api/2";
                 request(url, function(err, response, body) {
                     if(err) {
                         console.log(err);

@@ -15,7 +15,7 @@ app.use(bodyParser.json());
 /** End Server Setup **/
 
 /** Database Setup **/
-mongoose.connect('mongodb://node:node@novus.modulusmongo.net:27017/Iganiq8o');
+//mongoose.connect('mongodb://node:node@novus.modulusmongo.net:27017/Iganiq8o');
 /** End Database Setup **/
 
 /** Application Initialization **/
@@ -24,4 +24,6 @@ var port = process.env.PORT || 3000;
 app.listen(port);
 
 console.log('Magic happens on port ' + port);
+
+var soapClient = require('./app/ws/clients/soap.js');
 /** Why are you looking here? This party never stops... **/
