@@ -1,19 +1,6 @@
-<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:voy="http://foundation.rccl.com/v1/voyage" xmlns:com="http://foundation.rccl.com/v1/commontypes">
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:efc="http://foundation.rccl.com/v1/efcutil">
     <soapenv:Header/>
     <soapenv:Body>
-        <voy:findVoyages>
-            <voy:searchParameters>
-                <com:brandCode>R</com:brandCode>
-                <com:shipCode>QN</com:shipCode>
-                <com:itineraryCode></com:itineraryCode>
-                <com:regionCode></com:regionCode>
-                <com:packageCode></com:packageCode>
-                <com:startDate>2015-01-01</com:startDate>
-                <com:endDate>2015-12-31</com:endDate>
-                <com:includeEndingWithinDateRange></com:includeEndingWithinDateRange>
-                <com:includeRelatedMasterAndInterportingVoyages></com:includeRelatedMasterAndInterportingVoyages>
-                <com:voyageTypes></com:voyageTypes>
-            </voy:searchParameters>
-        </voy:findVoyages>
+        <efc:getAllPropertyNames/>
     </soapenv:Body>
 </soapenv:Envelope>
