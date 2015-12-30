@@ -10,25 +10,23 @@ fs.readFile('./app/resources/request.xml', 'utf8', function (err, data) {
     console.log(data);
     parseString(data, {attrkey: '', mergeAttrs: true }, function (err, parseResult) {
         var request = parseResult;
-        console.log('******* JSON Request *******');
-        console.log(pd.json(request));
 
-        var attributes = []
-        for (var attribute in request['soapenv:Envelope']) {
-            if (attribute.substring(0, 5) == 'xmlns') {
-                attributes.push(attribute, request['soapenv:Envelope'][attribute]);
-                delete request['soapenv:Envelope'][attribute];
+        request['soapenv:Envelope']['attributes'] = new Array();
+        for (var attributes in request['soapenv:Envelope']) {
+            if (attributes.substring(0, 5) == 'xmlns') {
+                request['soapenv:Envelope']['attributes'][attributes] = new Array();
+                request['soapenv:Envelope']['attributes'][attributes] = request['soapenv:Envelope'][attributes][0];
+                delete request['soapenv:Envelope'][attributes];
             }
             else {
-                console.log('******* Attributes *******');
-                console.log(attributes);
+                for (var keyPair in console.log(request['soapenv:Envelope']['attributes']))
+                    console.log(keyPair);
                 break;
             }
         }
 
-        var wsdlOptions = {
-            attributesKey: '$attributes'
-        };
+        console.log('******* JSON Request *******');
+        console.log(pd.json(request));
 
         var methodName = Object.keys(request['soapenv:Envelope']['soapenv:Body'][0])[0];
         var i = methodName.search(':');
@@ -38,7 +36,7 @@ fs.readFile('./app/resources/request.xml', 'utf8', function (err, data) {
 
 
         var wsdl = 'http://efcdev01:16120/efcweb/services/ws/v1/VoyageService?wsdl';
-        soap.createClient(wsdl, wsdlOptions, function(err, client) {
+        soap.createClient(wsdl, function(err, client) {
 
             client[methodName](request, function(err, result, body) {
                 console.log('******* XML Request *******');
