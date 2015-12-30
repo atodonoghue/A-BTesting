@@ -36,7 +36,6 @@ fs.readFile('./app/resources/request.xml', 'utf8', function (err, data) {
 
         var wsdl = 'http://efcdev01:16120/efcweb/services/ws/v1/VoyageService?wsdl';
         soap.createClient(wsdl, function(err, client) {
-
             client[methodName](request, function(err, result, body) {
                 console.log('******* XML Request *******');
                 console.log(js2xmlparser('ignore-me', request));
