@@ -19,7 +19,7 @@ fs.readFile('./app/resources/request.xml', 'utf8', function (err, data) {
                 delete request['soapenv:Envelope'][attributes];
             }
             else {
-                for (var keyPair in console.log(request['soapenv:Envelope']['attributes']))
+                for (var keyPair in request['soapenv:Envelope']['attributes'])
                     console.log(keyPair);
                 break;
             }
