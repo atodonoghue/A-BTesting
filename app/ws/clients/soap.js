@@ -40,7 +40,7 @@ fs.readFile('./app/resources/request.xml', 'utf8', function (err, data) {
 
             client[methodName](request, function(err, result, body) {
                 console.log('******* XML Request *******');
-                console.log(console.log(js2xmlparser('ignore-me', request)));
+                console.log(js2xmlparser('ignore-me', request));
                 console.log('******* XML Response *******');
                 console.log(pd.xml(body));
             });
